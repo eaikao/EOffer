@@ -18,3 +18,5 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 #包含源文件
 add_subdirectory("source")
+
+#set_property(TARGET yourTarget PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "yourPath")

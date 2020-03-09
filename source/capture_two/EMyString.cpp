@@ -1,6 +1,8 @@
 #include "EMyString.h"
 #include <string.h>
 
+#define OPTIMIZATION_EMSTRING
+
 EMyString::EMyString(const char* pData, int nLen)
 	: m_pData(nullptr)
 	, m_nLen(0) {
@@ -28,7 +30,7 @@ const char* EMyString::cstr() const {
 }
 
 #ifdef OPTIMIZATION_EMSTRING
-const EMyString& EMyString::operator=(const EMyString& str) {
+EMyString& EMyString::operator =(const EMyString& str) {
 	if (this != &str) {
 		EMyString strTmp(str);
 		char* tempData = strTmp.m_pData;
